@@ -9,7 +9,7 @@
 .outline {
     border: rgba(0, 0, 0, 0.836);
     border-style: solid;
-    height: 400px;
+    height: 350px;
     width: 300px;
     margin: auto;
 }
@@ -17,8 +17,45 @@
     border: black;
     border-style: groove;
     border-radius: 5px;
-    height: 45px;
+    height: 50px;
     width: 270px;
     margin-top: 10px;
     margin-left: 10px;
+}
+.container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 15px;
+}
+.clear {
+    width: 40%;
+    text-align: center;
+    background-color: rgba(148, 2, 2, 0.849);
+    padding: 5px;
+}
+.digits {
+    display: flex;
+    flex-wrap: wrap;
+    width: 201px;
+    justify-content: space-between;
+    margin-top: 15px;
+    margin-left: 5px;
+}
+.digit {
+    width: 64px;
+    /* margin: 1px; */
+    padding: 5px;
+    margin-top: 5px;
+}
+.zeroes {
+    display: flex;
+    flex-wrap: nowrap;
+    width: 201px;
+    justify-content: space-between;
+    margin-left: 5px;
+    margin-top: 5px;
+}
+.zero {
+    width: 97px;
+    padding: 5px;
 }
