@@ -30,3 +30,26 @@ const operate = function(a, operator, b) {
     case "/":
         return divide(a, b);
     }   }
+
+let arithmeticCalc = {
+    a: 0,
+    Operand: 0,
+    secondNumber: 0
+};    
+
+const buttons = document.querySelectorAll('.digit');
+buttons.forEach(element => {
+    element.addEventListener('click', (e) => {
+    const display = document.querySelector('.display');
+    display.innerText += e.target.innerText; 
+        arithmeticCalc.a = display.innerText;
+        console.log(arithmeticCalc.a);
+})
+})
+const operations = document.querySelectorAll('.operand');
+operations.forEach(newelement => {
+    newelement.addEventListener('click', (e) => {
+    const newdisplay = document.querySelector('.display');
+    newdisplay.innerText += e.target.innerText;
+    })
+})
