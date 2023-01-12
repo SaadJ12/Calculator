@@ -42,37 +42,52 @@ const buttons = document.querySelectorAll('.digit');
 buttons.forEach(element => {
     element.addEventListener('click', (e) => {
     const display = document.querySelector('.display');
-    display.innerText = e.target.innerText; 
     if(step === 1) {
-       arithmeticCalc.a = parseFloat(display.innerText);
-       step = 2;
+        arithmeticCalc.a = parseFloat(display.innerText + e.target.innerText);
+        display.innerText = arithmeticCalc.a;
+        step = 2;
+    } else if (step === 3){
+        arithmeticCalc.b = parseFloat(display.innerText + e.target.innerText);
+        display.innerText = arithmeticCalc.b;
+        step = 4;
     } 
     })
 });
-
+                                       
 const operations = document.querySelectorAll('.operand');
 operations.forEach(newelement => {
     newelement.addEventListener('click', (e) => {
     const newdisplay = document.querySelector('.display');
+    if(step === 2) {
     newdisplay.innerText += e.target.innerText;
-    arithmeticCalc.Operand = newdisplay.innerText;
+    arithmeticCalc.Operand = e.target.innerText;
     step = 3;
+    }
     })
 });
 
-const secondNumber = document.querySelectorAll('.digit');
-secondNumber.forEach(element => {
-    element.addEventListener('click', (e) => {
-    const display2 = document.querySelector('.display');
-    display2.innerText = e.target.innerText;
-    arithmeticCalc.b = parseFloat(display2.innerText);
-    // perform the calculation using operate function
 const sol = document.querySelector('.solution');
-    sol.addEventListener('click', (e) => {
-    const result = add(arithmeticCalc.a, arithmeticCalc.b);
-    console.log(result);
-    step = 1;
-    });
-    })
+sol.addEventListener('click', (e) => {
+    if(step === 4) {
+        let result;
+        switch(arithmeticCalc.Operand) {
+            case "+":
+                result = add(arithmeticCalc.a, arithmeticCalc.b);
+                break;
+            case "-":
+                result = subtract(arithmeticCalc.a, arithmeticCalc.b);
+                break;
+            case "*":
+                result = multiply(arithmeticCalc.a, arithmeticCalc.b);
+                break;
+            case "/":
+                result = divide(arithmeticCalc.a, arithmeticCalc.b);
+                break;
+        }
+        console.log(result);
+        const display = document.querySelector('.display');
+        display.innerText = result;
+        step = 1;
+    }
+});
 
-    }) 
