@@ -12,6 +12,7 @@
     height: 340px;
     width: 300px;
     margin: auto;
+    border-radius: 5px;
 }
 .display {
     border: black;
@@ -35,7 +36,7 @@
     background-color: rgba(148, 2, 2, 0.849);
     padding: 5px;
 }
-.digits {
+.digits{
     display: flex;
     flex-wrap: wrap;
     /* width: 201px; */
@@ -44,7 +45,7 @@
     margin-left: 5px;
     margin-right: 5px;
 }
-.digit {
+.digit, .operand{
     width: 64px;
     padding: 5px;
     margin-top: 5px;
