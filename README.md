@@ -11,6 +11,9 @@ A "Clear" button to reset the calculator.
 Requirements:-
 A web browser to run the HTML and JavaScript.
 
+Screenshots:-
+[![Calculator.png](https://i.postimg.cc/WbVzhgXW/Calculator.png)](https://postimg.cc/fkHDPt4m)
+
 How to Use:-
 Open the index.html file in your web browser.
 Use the button or keypad to input numbers and math operations.
